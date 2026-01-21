@@ -50,7 +50,7 @@ class MCPClient:
         session_context = ClientSession(*stream)
         self.session = await session_context.__aenter__()
 
-        self.session.initialize()
+        await self.session.initialize()
         print("session initialized stdio client!")
 
         response = await self.session.list_tools()
